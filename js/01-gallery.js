@@ -21,6 +21,7 @@ const addedGallery = galleryItems
 
 
 
+
 shownGallery.insertAdjacentHTML("afterbegin",addedGallery)
 function galleryShow(event){
     event.preventDefault()
@@ -31,12 +32,13 @@ function galleryShow(event){
  const picture = event.target.dataset.source;
  const instance = basicLightbox.create( `<img src="${picture}" width="800" height="600">`);
 instance.show()
-
-window.addEventListener("keydown", (event) =>{
-    if(event.key === "Escape"){
-        instance.close()
-    }
-})
+const closingModal = (event) =>{
+  if(event.key === "Escape"){
+      instance.close()
+  }
+}
+window.addEventListener("keydown", closingModal )
+window.removeEventListener("keyup", closingModal)
 }
 
 shownGallery.addEventListener("click",galleryShow)
