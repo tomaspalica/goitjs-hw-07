@@ -34,7 +34,8 @@ function galleryShow(event){
 instance.show()
 const closingModal = (event) =>{
   if(event.key === "Escape"){
-      instance.close()
+    instance.close()
+    window.removeEventListener("keyup", closingModal)
   }
 }
 window.addEventListener("keydown", closingModal )
