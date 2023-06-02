@@ -39,7 +39,7 @@ const closingModal = (event) =>{
   }
 }
 window.addEventListener("keydown", closingModal )
-window.removeEventListener("keyup", closingModal)
+window.removeEventListener("keydown", closingModal)
 }
 
 shownGallery.addEventListener("click",galleryShow)
