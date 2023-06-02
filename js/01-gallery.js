@@ -35,11 +35,11 @@ instance.show()
 const closingModal = (event) =>{
   if(event.key === "Escape"){
     instance.close()
-    window.removeEventListener("keyup", closingModal)
+    window.removeEventListener("keydown", closingModal)
   }
 }
 window.addEventListener("keydown", closingModal )
-window.removeEventListener("keydown", closingModal)
+
 }
 
 shownGallery.addEventListener("click",galleryShow)
